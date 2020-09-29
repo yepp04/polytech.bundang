@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script>
+$.ajax({
+	url: "http://localhost:8088/ajax/ajax.jsp",
+	data : { name: "홍길동" },
+	type: "GET",
+	dataType: "json"
+})
+
+.done(function(json) {
+	console.log(json);
+	$("<h1>").text(json.title).appendTo("body");
+})
+
+.fail(function(xhr, status, errorThrown) {
+	console.log(xhr, status, errorThrown);
+	$("#text").html("오류가 발생했습니다. <br>")
+	.append("오류명: " + errorThrown + "<br>")
+	.append("상태: " + status);
+})
+
+.always(function(xhr, status) {
+	console.log(xhr, status);
+	$("#text").html("요청이 완료되었습니다!");
+});
+</script>
+</head>
+<body>
+<h1>홍길동</h1>
+<div id="text"></div>
+</body>
+</html>

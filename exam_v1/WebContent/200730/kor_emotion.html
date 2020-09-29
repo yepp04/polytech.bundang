@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+#btn1 {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-right: -4px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-left: -3px;
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, 0);
+	color: black;
+	padding: 5px;
+}
+#btn1:hover {
+	color: white;
+	background-color: black;
+}
+</style>
+</head>
+<body>
+	<script>
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					//document.getElementById("print").innerHTML = this.responseText;
+					var response = JSON.parse(this.responseText);
+					document.getElementById("print").innerHTML = response.txt;
+					if (response.type == 1) {
+						document.body.style.background = "#91AEEE";
+					} else {
+						document.body.style.background = "#F0AAAA";
+					}
+					document.getElementById("result").innerHTML = "결과";
+					document.getElementById("graph").width = response.percent * 4;
+					document.getElementById("graph_blank").width = 400 - (response.percent * 4);
+					document.getElementById("graph").innerHTML = "<font size=\"15\"><strong style=\"color:white;\">&nbsp;"
+							+ response.percent.toFixed(2) + "%</strong></font>";
+				}
+			};
+			var reviewStr = document.getElementById("input").value;
+			xhttp.open("GET", "http://localhost:8000/moviereview?review="
+					+ reviewStr, false);
+			xhttp.setRequestHeader("X-Custom-Header", "testvalue");
+			xhttp.send();
+			//xhttp.open("POST", "http://ipinfo.io/json", false);
+			//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			//xhttp.send("fname=Henry&lname=Ford");
+		}
+	</script>
+	<h1>영화 리뷰 감정분석 프로그램</h1>
+	<form method="get">
+		<input id="input" type="text" class="form-control" name="input"
+			placeholder="리뷰를 입력하세요" style="width: 400px; height: 50px">
+		<button type="button" onclick="loadDoc()" name="submit" id=btn1
+			style="width: 55px; height: 55px">실행</button>
+	</form>
+	<h1 id=result></h1>
+	<table cellspacing=0 cellpadding=0 height=40>
+		<tr>
+			<td id="graph" bgcolor="pink"></td>
+			<td id="graph_blank" bgcolor="white"></td>
+		</tr>
+	</table>
+	<h3 id="print"></h3>
+</body>
+</html>

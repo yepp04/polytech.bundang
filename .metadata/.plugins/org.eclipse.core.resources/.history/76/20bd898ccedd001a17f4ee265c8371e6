@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex12-6</title>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+var n = 0;
+$(document).ready(function() {
+	$("div.out").mouseenter(function() {
+		$("p:first", this).text("마우스 포인트 들어옴");
+		$("p:last", this).text(++n);
+	});
+	$("div.out").mouseleave(function() {
+		$("p:first", this).text("마우스 포인트 나감");
+		$("p:last", this).text("최종 횟수 : " + n);
+	});
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

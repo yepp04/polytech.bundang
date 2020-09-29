@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex12-10</title>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var xWidth = 100;
+		var yHeight = 100;
+		$("div").click(function() {
+			$(this).width(xWidth).addClass("box");
+			$(this).height(yHeight).addClass("box");
+			xWidth = xWidth - 10;
+			yHeight = yHeight - 10;
+		});
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

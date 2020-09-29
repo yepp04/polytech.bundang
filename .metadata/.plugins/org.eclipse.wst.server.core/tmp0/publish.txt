@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Aug 21 14:17:47 KST 2020
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\kopo\\.m2\\repository\\org\\springframework\\spring-web\\4.3.18.RELEASE\\spring-web-4.3.18.RELEASE.jar=WEB-INF/lib/spring-web-4.3.18.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\kopo\\.m2\\repository\\org\\springframework\\spring-web\\5.2.8.RELEASE\\spring-web-5.2.8.RELEASE.jar=WEB-INF/lib/spring-web-5.2.8.RELEASE.jar

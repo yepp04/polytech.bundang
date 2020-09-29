@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="hello"/>
+<aop-project name="exam_view"/>
+<aop-project name="exam_view2"/>
+<aop-project name="exam_hibernate"/>
+<aop-project name="exam_jdbc"/>
+<aop-project name="SpringBoard"/>
+</aop-reference-model>

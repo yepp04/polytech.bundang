@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<h1>성적 조회후 정정/삭제</h1>
+	<form method="post" action="showREC.jsp">
+		<p>
+			&nbsp;&nbsp;조회할 학번&nbsp;&nbsp;&nbsp; <input type="search"
+				name="search"> &nbsp;&nbsp;&nbsp;<input type="submit"
+				value="조회">
+		</p>
+		<table border=1 cellspacing=0>
+			<tr align=center>
+				<td width=100>이름</td>
+				<td width=400><input type="search" name="name" readonly></td>
+			</tr>
+			<tr align=center>
+				<td width=100>학번</td>
+				<td width=400>자동부여</td>
+			</tr>
+			<tr align=center>
+				<td width=100>국어</td>
+				<td width=400><input type="text" name="kor" readonly></td>
+			</tr>
+			<tr align=center>
+				<td width=100>영어</td>
+				<td width=400><input type="text" name="eng" readonly></td>
+			</tr>
+			<tr align=center>
+				<td width=100>수학</td>
+				<td width=400><input type="text" name="mat" readonly></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

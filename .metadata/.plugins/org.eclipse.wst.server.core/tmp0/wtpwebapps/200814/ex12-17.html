@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex12-17</title>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+	function move(obj, time) {
+		$(obj).stop().animate({
+			left : -350,
+			top : 0,
+		}, time);
+	}
+	function back(css) {
+		$(css).stop().animate({
+			left : 0,
+			top : 0
+		});
+	}
+</script>
+<style>
+.moving {
+	border: 1px solid #000000;
+	margin: 20px auto 0 auto;
+	text-align: right;
+	width: 550px;
+}
+
+.moving img {
+	cursor: pointer;
+	position: relative;
+}
+</style>
+</head>
+<body>
+<div class="init">
+<button type="button" onclick="back('.moving img')">초기화 상태</button><br>
+</div>
+<div class="moving">
+<img onclick="move(this, 6000)" src="cat.jpg"/><br>
+<img onclick="move(this, 3000)" src="cat.jpg"/><br>
+<img onclick="move(this, 1000)" src="cat.jpg"/><br>
+</div>
+</body>
+</html>
